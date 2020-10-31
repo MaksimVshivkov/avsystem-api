@@ -1,0 +1,29 @@
+application:
+  version: 1.0
+server:
+  port: 9999
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    datasource:
+      username: sa
+      password: password
+#    data: data.sql
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+logging:
+  level:
+    root: DEBUG  #WARN
+    logging.level.org.hibernate.SQL: DEBUG
+    logging.level.org.hibernate.type.descriptor.sql: trace
+  file:
+    name: log/app.log
+    max-size: 10MB
+    max-history: 50
